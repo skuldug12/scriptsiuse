@@ -1,2 +1,2 @@
 # scriptsiuse
-Scripts I use if I kill my chroot and need to restart.
+Scripts I use if I kill my devices and need to restart.
