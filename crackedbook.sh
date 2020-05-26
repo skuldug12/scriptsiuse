@@ -18,10 +18,22 @@ case $rootfsver in
      ;;
 esac
 
+read -p "Do you have chromebrew? [Y/n]" chromebrewinst
+
+case $chromebrewinst in
+  y|Y|) 
+      continue 
+      ;;
+  n|N) 
+     echo "installing chromebrew for wget..."
+     curl -Ls https://raw.github.com/skycocker/chromebrew/master/install.sh | bash
+     ;;
+esac
+
 echo "Making ./tmpchbookdownloads"
 mkdir ./tmpchbookdownloads
 
-echo "Getting .debs for dpkg and apt"
+echo "Getting .debs for dpkg and apt and extracting them into root directory + subdirectories..."
 
 wget
 wget
@@ -37,8 +49,6 @@ wget
 wget
 wget
 wget
-
-echo "Done, extracting in root directory"
 
 ar x 
 ar x
