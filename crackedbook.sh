@@ -25,46 +25,51 @@ case $chromebrewinst in
       continue 
       ;;
   n|N) 
-     echo "installing chromebrew for wget..."
+     echo "installing chromebrew for necessary dependencies..."
      curl -Ls https://raw.github.com/skycocker/chromebrew/master/install.sh | bash
      ;;
 esac
 
 echo "Making ./tmpchbookdownloads"
 mkdir ./tmpchbookdownloads
+cd ./tmpchbookdownloads
 
 echo "Getting .debs for dpkg and apt and extracting them into root directory + subdirectories..."
 
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
-wget
+wget http://ftp.us.debian.org/debian/pool/main/d/dpkg/dpkg_1.19.7_amd64.deb
+ar x dpkg_1.19.7_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
 
-ar x 
-ar x
-ar x
-ar x
-ar x 
-ar x
-ar x
+wget http://ftp.us.debian.org/debian/pool/main/b/bzip2/libbz2-1.0_1.0.6-9.2~deb10u1_amd64.deb
+ar x libbz2-1.0_1.0.6-9.2~deb10u1_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
 
-tar -xvf -C /
-tar -xvf -C /
-tar -xvf -C /
-tar -xvf -C /
-tar -xvf -C /
-tar -xvf -C /
-tar -xvf -C /
+wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.28-10_amd64.deb
+ar x libc6_2.28-10_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/g/gcc-8/libgcc1_8.3.0-6_amd64.deb
+ar x libgcc1_8.3.0-6_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/g/gcc-8/gcc-8-base_8.3.0-6_amd64.deb
+ar x gcc-8-base_8.3.0-6_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/x/xz-utils/liblzma5_5.2.4-1_amd64.deb
+ar x liblzma5_5.2.4-1_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/libs/libselinux/libselinux1_2.8-1+b1_amd64.deb
+ar x libselinux1_2.8-1+b1_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
 
 echo "Destroying tmpchbookdownloads"
 rm -rf ./tmpchbookdownloads
