@@ -71,5 +71,30 @@ ar x libselinux1_2.8-1+b1_amd64.deb
 tar -xvf data.tar.xz -C /
 rm -f *
 
+wget http://ftp.us.debian.org/debian/pool/main/p/pcre3/libpcre3_8.39-12_amd64.deb
+ar x libpcre3_8.39-12_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/z/zlib/zlib1g_1.2.11.dfsg-1_amd64.deb
+ar x zlib1g_1.2.11.dfsg-1_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://security.debian.org/debian-security/pool/updates/main/a/apt/apt_1.8.2.1_amd64.deb
+ar x apt_1.8.2.1_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/g/gnutls28/libgnutls30_3.6.7-4+deb10u3_amd64.deb
+ar x libgnutls30_3.6.7-4+deb10u3_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
+wget http://ftp.us.debian.org/debian/pool/main/g/gmp/libgmp10_6.1.2+dfsg-4_amd64.deb
+ar x libgmp10_6.1.2+dfsg-4_amd64.deb
+tar -xvf data.tar.xz -C /
+rm -f *
+
 echo "Destroying tmpchbookdownloads"
 rm -rf ./tmpchbookdownloads
